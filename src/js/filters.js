@@ -122,7 +122,9 @@ angular.module('netStatsApp.filters', [])
 			result = hashes / Math.pow(1000, 4);
 			unit = 'T';
 		}
-
+		if (typeof result !== 'number') {
+			result = Number(result);
+		}
 		return result.toFixed(2) + ' ' + unit + 'H';
 	};
 })
